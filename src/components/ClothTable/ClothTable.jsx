@@ -4,20 +4,16 @@ const ClothTable = ({
   combinaionOfData: { mainData, setMainData },
   combinaionOfData,
 }) => {
+  const delProduct = (id) => {
+    console.log(id);
+    const restProduct = mainData.filter((product) => product.id !== id);
+    setMainData(restProduct);
+  };
   return (
     <>
       <table className="form">
         <thead>
           <tr>
-            {/* <td>{name}</td>
-        <td>{id}</td>
-        <td>{price}</td>
-        <td>{quantity}</td>
-        <td>{textArea}</td>
-        <td>{Colorselector}</td>
-        <td>{date}</td>
-        <td>{size}</td>
-        <td>Delete</td> */}
             <th>Name:</th>
             <th>Id:</th>
             <th>Price:</th>
@@ -31,7 +27,11 @@ const ClothTable = ({
         </thead>
         <tbody>
           {mainData?.map((rowDAta) => (
-            <ClothRow key={rowDAta.id} rowDAta={rowDAta}></ClothRow>
+            <ClothRow
+              key={rowDAta.id}
+              rowDAta={rowDAta}
+              delProduct={delProduct}
+            ></ClothRow>
           ))}
         </tbody>
       </table>
