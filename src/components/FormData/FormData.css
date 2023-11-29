@@ -1,0 +1,56 @@
+.form {
+  background-color: rgba(255, 255, 255, 0.266);
+  box-shadow: 0 0 3px 4px gray;
+  border-radius: 20px;
+  width: 40%;
+}
+
+input {
+  display: block;
+  padding: 10px;
+  border-radius: 20px;
+  width: 80%;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.673);
+  color: rgba(255, 255, 255, 0.632);
+  margin: 0 auto;
+}
+textarea {
+  background-color: rgba(0, 0, 0, 0.673);
+  color: rgba(255, 255, 255, 0.632);
+  display: block;
+  border-radius: 20px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+select {
+  background-color: rgba(0, 0, 0, 0.673);
+  color: rgba(255, 255, 255, 0.632);
+}
+
+.radioClass {
+  /* position: relative;
+   */
+  display: inline-flex;
+  /* gap: 20px; */
+  /* align-items: center; */
+
+  /* justify-content: space-around; */
+}
+button {
+  background-color: rgb(144, 67, 215);
+  width: 40%;
+  height: 30px;
+  color: rgba(255, 255, 255, 0.632);
+  outline: none;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+  transition: 0.24s ease-out ease-in;
+}
+button:active {
+  transform: scale(0.8);
+}
