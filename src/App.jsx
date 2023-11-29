@@ -24,12 +24,15 @@ function App() {
     mainData,
     setMainData,
   };
-  // const [data, setData] = useState([]);
   return (
     <>
       <div className="formRoot">
         <Form mainData={mainData} setMainData={setMainData}></Form>
-        <ClothTable combinaionOfData={combinaionOfData}></ClothTable>
+        {mainData.length > 0 ? (
+          <ClothTable combinaionOfData={combinaionOfData}></ClothTable>
+        ) : (
+          <h2>No product added yet please add product to see product</h2>
+        )}
       </div>
     </>
   );
