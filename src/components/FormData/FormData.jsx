@@ -8,11 +8,8 @@ const Form = ({ setMainData, mainData }) => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(e);
     const targetElemnt = e.target.querySelectorAll("input,textarea,select");
-    console.log(targetElemnt);
     targetElemnt.forEach((element) => {
-      console.log(element.type, "type");
       if (element.type === "radio") {
         element.checked = false;
       }
@@ -22,11 +19,9 @@ const Form = ({ setMainData, mainData }) => {
       newInputData.a = "e";
     });
     const checkAllDataAvailibility = Object.keys(newInputData);
-    console.log(checkAllDataAvailibility.length);
     if (checkAllDataAvailibility.length !== 10) {
       return alert("Please fill all input feild");
     }
-    console.log(checkAllDataAvailibility);
     setMainData((prevData) => [...prevData, newInputData]);
   };
   return (
