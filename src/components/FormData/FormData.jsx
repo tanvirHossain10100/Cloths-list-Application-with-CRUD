@@ -7,15 +7,16 @@ const Form = ({ setMainData, mainData }) => {
   const { maxLengthForId, maxLenght, newInputData, handleChanges } = useForm();
   // {}
   // console.log(maxLenght)
-  console.log(maxLenght);
+  // console.log(maxLenght);
   const submitForm = (e) => {
     e.preventDefault();
     let unique;
     const targetElemnt = e.target.querySelectorAll("input,textarea,select");
     targetElemnt.forEach((element) => {
-      if (element.target.name === "name") {
-        console.log(e.target.name.length);
-      }
+      console.log(element);
+      // if (element.target.name === "name") {
+      //   console.log(e.target.name.length);
+      // }
       if (element.type === "radio") {
         element.checked = false;
       }

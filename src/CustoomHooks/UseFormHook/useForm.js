@@ -12,6 +12,7 @@ const useForm = (initialData) => {
   // let maxValueName;
   const handleChanges = (e) => {
     const { name, value } = e.target;
+    console.log(value);
     if (value < 0) {
       e.target.value = "";
       return alert("Please insert positive value");
@@ -23,13 +24,13 @@ const useForm = (initialData) => {
     setMaxLength(false);
     if (name === "name") {
       if (value.length > 9) {
-        const value = e.target.value;
+        // const value = e.target.value;
         // console.log(value);
         e.target.value = value;
         // maxValueName = 10;
         return setMaxLength(true);
       }
-      return;
+      // return;
     }
 
     if (name === "id") {
