@@ -13,7 +13,7 @@ const Form = ({ setMainData, mainData }) => {
       if (element.type === "radio") {
         element.checked = false;
       }
-
+      mainData
       element.value = "";
       setIsCheckBox(!isChckBox);
       newInputData.a = "e";
