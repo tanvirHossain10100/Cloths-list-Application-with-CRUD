@@ -4,13 +4,18 @@ import "./FormData.css";
 
 const Form = ({ setMainData, mainData }) => {
   const [isChckBox, setIsCheckBox] = useState(false);
-  const { maxLenght, newInputData, handleChanges } = useForm({});
+  const { maxLengthForId, maxLenght, newInputData, handleChanges } = useForm();
+  // {}
+  // console.log(maxLenght)
   console.log(maxLenght);
   const submitForm = (e) => {
     e.preventDefault();
     let unique;
     const targetElemnt = e.target.querySelectorAll("input,textarea,select");
     targetElemnt.forEach((element) => {
+      if (element.target.name === "name") {
+        console.log(e.target.name.length);
+      }
       if (element.type === "radio") {
         element.checked = false;
       }
@@ -54,13 +59,14 @@ const Form = ({ setMainData, mainData }) => {
           </label>
           <br />
           <label>
-            {isChckBox ? (
-              <span>Id must be in 3 character</span>
+            {maxLengthForId ? (
+              <span style={{ color: "red" }}>Id must be in 3 character</span>
             ) : (
               <span>Id:</span>
             )}
             <input
               maxLength={2}
+              max={999}
               type="number"
               name="id"
               placeholder="Please type your cloth Id"

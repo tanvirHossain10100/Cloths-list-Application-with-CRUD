@@ -4,13 +4,14 @@ import { useState } from "react";
 const useForm = (initialData) => {
   const [newInputData, setNewInputData] = useState(initialData);
 
-  const [maxLenght, setMaxLength] = useState(false); // {
+  const [maxLenght, setMaxLength] = useState(false);
+  const [maxLengthForId, setMaxLengthForId] = useState(false); // {
   //   name: "",
   //   age: "",
   // }
+  // let maxValueName;
   const handleChanges = (e) => {
     const { name, value } = e.target;
-    console.log(typeof Number(value));
     if (value < 0) {
       e.target.value = "";
       return alert("Please insert positive value");
@@ -19,17 +20,27 @@ const useForm = (initialData) => {
       e.target.value = "";
       return alert("Please type text");
     }
+    setMaxLength(false);
     if (name === "name") {
       if (value.length > 9) {
+        const value = e.target.value;
+        // console.log(value);
+        e.target.value = value;
+        // maxValueName = 10;
         return setMaxLength(true);
       }
+      return;
     }
+
     if (name === "id") {
       if (value.toString().length > 3) {
-        return setMaxLength(true);
+        const value = e.target.value.toString();
+        e.target.value = value.slice(0, 3) * 1;
+        setMaxLengthForId(true);
+        return;
       }
     }
-    setMaxLength(false);
+    setMaxLengthForId(false);
     if (name === "quantity") {
       if (value > 10) {
         e.target.value = "";
@@ -52,6 +63,8 @@ const useForm = (initialData) => {
     newInputData,
     handleChanges,
     maxLenght,
+    // maxValueName,
+    maxLengthForId,
   };
 };
 
