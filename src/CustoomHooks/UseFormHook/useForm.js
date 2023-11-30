@@ -9,11 +9,9 @@ const useForm = (initialData) => {
   const handleChanges = (e) => {
     const { name, value } = e.target;
     console.log(typeof Number(value));
-    if (name === "name") {
-      if ((name === "name" && value > 0) || value < 0) {
-        console.log(typeof value, "hg");
-        return alert("Please type text");
-      }
+    if ((name === "name" && value > 0) || value < 0) {
+      console.log(typeof value, "hg");
+      return alert("Please type text");
     }
     if (name === "quantity") {
       if (value > 10) {

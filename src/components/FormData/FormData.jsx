@@ -39,6 +39,7 @@ const Form = ({ setMainData, mainData }) => {
           <label>
             Name:
             <input
+              maxLength={10}
               type="text"
               name="name"
               placeholder="Please type your cloth name"
@@ -72,7 +73,8 @@ const Form = ({ setMainData, mainData }) => {
           <label>
             quantity:
             <input
-              type="text"
+              maxLength={10}
+              type="number"
               name="quantity"
               placeholder="Please type your product quantity"
               required

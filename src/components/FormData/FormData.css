@@ -25,6 +25,7 @@ textarea {
   margin: 0 auto;
   box-sizing: border-box;
   padding-top: 20px;
+  resize: none;
 }
 select {
   background-color: rgba(0, 0, 0, 0.673);
