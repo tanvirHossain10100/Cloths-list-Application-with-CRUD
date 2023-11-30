@@ -19,9 +19,8 @@ const useForm = (initialData) => {
       if (value.length > 9) {
         return setMaxLength(true);
       }
-    } else {
-      setMaxLength(false);
     }
+    setMaxLength(false);
     if (name === "quantity") {
       if (value > 10) {
         return alert("You can not add more then 10 products");
