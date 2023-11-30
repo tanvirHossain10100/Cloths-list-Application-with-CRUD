@@ -130,6 +130,7 @@ const Form = ({ setMainData, mainData }) => {
             <option
               value=""
               disabled
+              selected
               defaultValue={" Select your option"}
               required
             >
