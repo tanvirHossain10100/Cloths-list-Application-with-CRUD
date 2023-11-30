@@ -11,12 +11,21 @@ const useForm = (initialData) => {
   const handleChanges = (e) => {
     const { name, value } = e.target;
     console.log(typeof Number(value));
+    if (value < 0) {
+      e.target.value = "";
+      return alert("Please insert positive value");
+    }
     if ((name === "name" && value > 0) || value < 0) {
-      console.log(typeof value, "hg");
+      e.target.value = "";
       return alert("Please type text");
     }
     if (name === "name") {
       if (value.length > 9) {
+        return setMaxLength(true);
+      }
+    }
+    if (name === "id") {
+      if (value.toString().length > 3) {
         return setMaxLength(true);
       }
     }

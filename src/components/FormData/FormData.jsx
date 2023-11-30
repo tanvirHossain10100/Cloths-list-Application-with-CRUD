@@ -18,7 +18,7 @@ const Form = ({ setMainData, mainData }) => {
 
       element.value = "";
       setIsCheckBox(!isChckBox);
-      newInputData.a = "e";
+      // newInputData.a = "e";
     });
     unique = mainData.find((uniueId) => uniueId.id === newInputData.id);
     console.log(unique, "d");
@@ -27,7 +27,8 @@ const Form = ({ setMainData, mainData }) => {
       return alert("Please add unique id por each cloth");
     }
     const checkAllDataAvailibility = Object.keys(newInputData);
-    if (checkAllDataAvailibility.length !== 10) {
+    console.log(checkAllDataAvailibility);
+    if (checkAllDataAvailibility.length !== 9) {
       return alert("Please fill all input feild");
     }
     setMainData((prevData) => [...prevData, newInputData]);
@@ -53,8 +54,13 @@ const Form = ({ setMainData, mainData }) => {
           </label>
           <br />
           <label>
-            Id:
+            {isChckBox ? (
+              <span>Id must be in 3 character</span>
+            ) : (
+              <span>Id:</span>
+            )}
             <input
+              maxLength={2}
               type="number"
               name="id"
               placeholder="Please type your cloth Id"
