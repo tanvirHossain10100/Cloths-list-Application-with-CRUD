@@ -2,7 +2,9 @@
 import { useState } from "react";
 
 const useForm = (initialData) => {
-  const [newInputData, setNewInputData] = useState(initialData); // {
+  const [newInputData, setNewInputData] = useState(initialData);
+
+  const [maxLenght, setMaxLength] = useState(false); // {
   //   name: "",
   //   age: "",
   // }
@@ -12,6 +14,13 @@ const useForm = (initialData) => {
     if ((name === "name" && value > 0) || value < 0) {
       console.log(typeof value, "hg");
       return alert("Please type text");
+    }
+    if (name === "name") {
+      if (value.length > 9) {
+        return setMaxLength(true);
+      }
+    } else {
+      setMaxLength(false);
     }
     if (name === "quantity") {
       if (value > 10) {
@@ -33,6 +42,7 @@ const useForm = (initialData) => {
   return {
     newInputData,
     handleChanges,
+    maxLenght,
   };
 };
 

@@ -4,8 +4,8 @@ import "./FormData.css";
 
 const Form = ({ setMainData, mainData }) => {
   const [isChckBox, setIsCheckBox] = useState(false);
-  const { newInputData, handleChanges } = useForm({});
-
+  const { maxLenght, newInputData, handleChanges } = useForm({});
+  console.log(maxLenght);
   const submitForm = (e) => {
     e.preventDefault();
     let unique;
@@ -37,7 +37,11 @@ const Form = ({ setMainData, mainData }) => {
       <div className="form">
         <form action="" onSubmit={submitForm}>
           <label>
-            Name:
+            {maxLenght ? (
+              <span style={{ color: "red" }}>Name must be 10 character</span>
+            ) : (
+              <span>Name:</span>
+            )}
             <input
               maxLength={10}
               type="text"
