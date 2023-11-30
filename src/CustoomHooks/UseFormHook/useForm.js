@@ -21,7 +21,9 @@ const useForm = (initialData) => {
       }
     }
     if (value < 0) {
-      return alert("You can not put negative number");
+      alert("You can not put negative number");
+      e.target.value = "";
+      return;
     }
 
     setNewInputData((prevData) => ({
