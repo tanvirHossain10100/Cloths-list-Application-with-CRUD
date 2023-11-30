@@ -8,16 +8,24 @@ const Form = ({ setMainData, mainData }) => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    let unique;
     const targetElemnt = e.target.querySelectorAll("input,textarea,select");
     targetElemnt.forEach((element) => {
       if (element.type === "radio") {
         element.checked = false;
       }
-      mainData
+      // console.log;
+
       element.value = "";
       setIsCheckBox(!isChckBox);
       newInputData.a = "e";
     });
+    unique = mainData.find((uniueId) => uniueId.id === newInputData.id);
+    console.log(unique, "d");
+    if (unique?.id) {
+      console.log("hey this is uniqueId");
+      return alert("Please add unique id por each cloth");
+    }
     const checkAllDataAvailibility = Object.keys(newInputData);
     if (checkAllDataAvailibility.length !== 10) {
       return alert("Please fill all input feild");
