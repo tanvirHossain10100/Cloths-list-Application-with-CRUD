@@ -32,6 +32,7 @@ const useForm = (initialData) => {
     setMaxLength(false);
     if (name === "quantity") {
       if (value > 10) {
+        e.target.value = "";
         return alert("You can not add more then 10 products");
       }
     }
