@@ -1,4 +1,5 @@
 import ClothRow from "../ClothRow/ClothRow";
+import "./ClothTable.css";
 
 const ClothTable = ({
   combinaionOfData: { mainData, setMainData },
@@ -8,6 +9,9 @@ const ClothTable = ({
     console.log(id);
     const restProduct = mainData.filter((product) => product.id !== id);
     setMainData(restProduct);
+  };
+  const handleAllDelete = () => {
+    setMainData([]);
   };
   return (
     <>
@@ -33,6 +37,18 @@ const ClothTable = ({
               delProduct={delProduct}
             ></ClothRow>
           ))}
+          <tr>
+            <td colSpan={9} onClick={handleAllDelete}>
+              <span
+                id="del"
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                Delete All
+              </span>
+            </td>
+          </tr>
         </tbody>
       </table>
     </>

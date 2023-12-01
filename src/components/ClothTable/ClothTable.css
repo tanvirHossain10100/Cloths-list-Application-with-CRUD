@@ -1,0 +1,25 @@
+table {
+  background-color: gray;
+  border-collapse: collapse;
+}
+th {
+  background-color: palegoldenrod;
+}
+td {
+  border: 1px solid gray;
+  padding: 0;
+}
+table td:last-child {
+  background-color: lightblue;
+  cursor: pointer;
+  user-select: none;
+}
+table tr:last-child td:last-child {
+  background-color: red;
+  height: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+thead :first-child {
+  height: 3rem;
+}

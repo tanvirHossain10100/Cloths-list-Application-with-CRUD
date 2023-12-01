@@ -11,12 +11,15 @@ const Form = ({ setMainData, mainData }) => {
   const submitForm = (e) => {
     e.preventDefault();
     let unique;
+    let letFormInputValidation;
     const targetElemnt = e.target.querySelectorAll("input,textarea,select");
     targetElemnt.forEach((element) => {
       console.log(element);
-      // if (element.target.name === "name") {
-      //   console.log(e.target.name.length);
+      // if (element.name === "name" && !/^[a-zA-Z]+$/.test(element)) {
+      //   letFormInputValidation = true;
       // }
+
+      /*  */
       if (element.type === "radio") {
         element.checked = false;
       }
@@ -26,6 +29,9 @@ const Form = ({ setMainData, mainData }) => {
       setIsCheckBox(!isChckBox);
       // newInputData.a = "e";
     });
+    if (letFormInputValidation) {
+      alert("Input should contain only letters.");
+    }
     unique = mainData.find((uniueId) => uniueId.id === newInputData.id);
     console.log(unique, "d");
     if (unique?.id) {
